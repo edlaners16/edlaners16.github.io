@@ -3,44 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Wedding Invitation</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <section class="hero">
+    <div class="container text-center">
+        <p class="intro">
+            Together with their families
+        </p>
 
-        <div class="overlay">
+        <h1 class="couple">
+            Michelle
+            <span>&</span>
+            Edlan
+        </h1>
 
-            <p class="family">
-                Together with their friends and families
-            </p>
+        <p class="date">
+            March 9, 2028
+        </p>
 
-            <h1>
-                Michelle
-                <span>&</span>
-                Edlan
-            </h1>
+<div id="countdown" class="countdown mt-4">
+    <div>
+        <span id="days">0</span>
+        <small>Days</small>
+    </div>
 
-            <p class="date">
-                March 9, 2028
-            </p>
+    <div>
+        <span id="hours">0</span>
+        <small>Hours</small>
+    </div>
 
-            <button id="openInvitation">
-                Open Invitation
-            </button>
+    <div>
+        <span id="minutes">0</span>
+        <small>Minutes</small>
+    </div>
 
-        </div>
+    <div>
+        <span id="seconds">0</span>
+        <small>Seconds</small>
+    </div>
+</div>    
 
+        <button id="openInvitation">
+            Open Invitation
+        </button>
+    </div>
     </section>
 
     <script src="js/script.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
