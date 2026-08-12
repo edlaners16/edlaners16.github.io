@@ -36,6 +36,9 @@ setInterval(updateCountdown,1000);
 
 document.getElementById("openInvitation").addEventListener("click",()=>{
 
-    alert("The invitation will open in the next step.");
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+        window.location.href = "invitation.html";
+    }, 500); // Matches the CSS transition duration
 
 });

@@ -1,0 +1,13 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .emoji { font-family: 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif; font-size:12px; }
+      .initials { font-family: Poppins, Arial, sans-serif; font-weight:600; font-size:28px; fill:white; }
+    </style>
+  </defs>
+  <rect width="64" height="64" rx="32" fill="#7B6CFF"/>
+  <text x="50%" y="46%" text-anchor="middle" class="initials" dominant-baseline="middle">M&amp;J</text>
+  <text x="76%" y="28%" text-anchor="middle" class="emoji" dominant-baseline="middle">💍</text>
+</svg>
+

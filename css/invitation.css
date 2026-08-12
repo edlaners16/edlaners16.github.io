@@ -1,0 +1,457 @@
+/* --- GENERAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f8f5f0;
+    color: #555;
+    line-height: 1.8;
+    font-size: 18px;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* For page load transition */
+body.fade-in {
+    opacity: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    font-weight: 400;
+    color: #c8a96a;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: #c8a96a;
+}
+
+/* --- SCROLL ANIMATION --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("../img/gettyimages-1154581957-1024x683.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.main-header p {
+    font-size: 22px;
+    font-style: italic;
+}
+
+.couple-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 80px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.date-place {
+    font-size: 20px;
+}
+
+.date-place span {
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- OUR STORY SECTION --- */
+.story-section {
+    background-color: #fff;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.story-image {
+    flex: 1;
+    max-width: 350px;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.story-text {
+    flex: 1.5;
+}
+
+.story-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* --- EVENT DETAILS SECTION --- */
+.event-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* New layout for event rows with side-by-side maps */
+.event-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.event-row {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.event-row .event-card,
+.event-row .map-container {
+    flex: 1 1 420px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-row .event-card {
+    max-width: 520px;
+}
+
+.event-row .map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border: 0;
+}
+
+.event-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1;
+    max-width: 350px;
+}
+
+.event-card i {
+    font-size: 40px;
+    color: #c8a96a;
+    margin-bottom: 20px;
+}
+
+.event-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.event-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- GALLERY SECTION --- */
+.gallery-section {
+    background-color: #fff;
+}
+
+.gallery-carousel {
+    overflow: hidden;
+    position: relative;
+    /* Add a gradient mask for a fade-out effect on the edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure buttons are on top */
+    background: #c8a96a; /* Gold color for visibility */
+    color: #fff; /* White icon */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.gallery-nav:hover {
+    background-color: #b89552; /* Darker gold on hover */
+    transform: translateY(-50%) scale(1.1);
+}
+.gallery-prev { left: 15px; }
+.gallery-next { right: 15px; }
+
+.photo-grid {
+    display: flex;
+    gap: 15px;
+    /* The transform property is now controlled by JavaScript */
+}
+
+.gallery-carousel:hover .photo-grid {
+    /* Pausing is now handled by JavaScript */
+}
+
+.photo-grid img {
+    width: 300px; /* Fixed width for consistent sizing */
+    height: 220px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Prevent images from shrinking */
+    cursor: pointer;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* --- INFO SECTION (ATTIRE & GIFTS) --- */
+.info-section .container {
+    display: flex;
+    gap: 30px;
+}
+
+.info-card {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    border-top: 4px solid #c8a96a;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.info-card h3 {
+    /* Use the main elegant font, make it gold and slightly larger */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600; /* Bolder than normal text */
+    color: #c8a96a;
+    margin-bottom: 15px;
+}
+
+/* --- RSVP SECTION --- */
+.rsvp-section {
+    background-color: #e9e3d9;
+}
+
+.rsvp-box {
+    background: #fff;
+    padding: 60px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.rsvp-section p {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+.rsvp-box p:first-of-type { margin-bottom: 5px; }
+.rsvp-box p:nth-of-type(2) { margin-bottom: 30px; }
+
+
+.rsvp-button {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 2px solid #c8a96a;
+    border-radius: 50px;
+    background: #c8a96a;
+    color: white;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.rsvp-button:hover {
+    background-color: transparent;
+    color: #c8a96a;
+}
+
+/* --- FOOTER --- */
+footer.main-footer {
+    background-color: #333;
+    color: #fff;
+    border-top: 4px solid #c8a96a;
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer .couple-names {
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+footer p {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    color: #c8a96a;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .story-content, .info-section .container {
+        flex-direction: column;
+    }
+
+    .event-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-row {
+        flex-direction: column;
+    }
+    .couple-names {
+        font-size: 60px;
+    }
+
+    .section-title {
+        font-size: 50px;
+    }
+}
+
+/* --- LIGHTBOX / MODAL IMAGE VIEWER --- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 240ms ease-in-out, visibility 240ms;
+    z-index: 1000;
+    padding: 40px 20px; /* Add padding for spacing from viewport edges */
+    overflow: auto; /* Move scrolling to the main lightbox container */
+}
+.lightbox.open {
+    visibility: visible;
+    opacity: 1;
+}
+.lightbox-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+}
+.lightbox-content {
+    position: relative;
+    z-index: 2;
+    /* This container now shrink-wraps the image. */
+    /* The parent (.lightbox) handles centering and scrolling. */
+}
+.lightbox-image {
+    /* Display image at its actual size */
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-spinner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.15);
+    border-top-color: rgba(255,255,255,0.9);
+    animation: spin 1s linear infinite;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.lightbox-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 3;
+    background: #fff;
+    color: #333;
+    border: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 480px) {
+    .lightbox-close { top: -12px; right: -12px; width: 32px; height: 32px; }
+}

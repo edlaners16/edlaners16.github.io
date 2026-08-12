@@ -7,6 +7,8 @@
 body{
     font-family:'Poppins',sans-serif;
     background:#f8f5f0;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .hero{
@@ -107,4 +109,38 @@ button:hover{
 .countdown small{
     font-size:14px;
     letter-spacing:1px;
+}
+
+/* --- FADE-IN ANIMATION --- */
+
+/* Define the animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at its original position */
+  }
+}
+
+/* Initial state for the elements */
+#family-text,
+#couple-names,
+#wedding-date-text {
+  opacity: 0; /* Start as invisible */
+  animation-name: fadeIn;
+  animation-duration: 1.5s; /* Animation lasts 1.5 seconds */
+  animation-fill-mode: forwards; /* Stay visible after animation ends */
+  animation-timing-function: ease-out;
+}
+
+/* Stagger the animations with delays */
+#family-text { animation-delay: 0.5s; }
+#couple-names { animation-delay: 1.5s; }
+#wedding-date-text { animation-delay: 2.5s; }
+
+body.fade-out {
+    opacity: 0;
 }
