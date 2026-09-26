@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
+    <title>Michelle & Edlan | March 9, 2028</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -11,56 +11,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
     <section class="hero">
-    <div class="container text-center">
-        <p class="intro" id="family-text">
-            Together with their families
-        </p>
+        <!-- Parallax background layer -->
+        <div class="hero-bg" id="hero-bg"></div>
 
-        <h1 class="couple" id="couple-names">
-            Michelle
-            <span>&</span>
-            Edlan
-        </h1>
+        <!-- Floating petal canvas -->
+        <canvas id="petal-canvas"></canvas>
 
-        <p class="date" id="wedding-date-text">
-            March 9, 2028
-        </p>
+        <div class="hero-content">
+            <p class="intro" id="family-text">Together with their families</p>
 
-<div id="countdown" class="countdown mt-4">
-    <div>
-        <span id="days">0</span>
-        <small>Days</small>
-    </div>
+            <h1 class="couple" id="couple-names">
+                Michelle
+                <span>&amp;</span>
+                Edlan
+            </h1>
 
-    <div>
-        <span id="hours">0</span>
-        <small>Hours</small>
-    </div>
+            <div class="hero-divider"></div>
 
-    <div>
-        <span id="minutes">0</span>
-        <small>Minutes</small>
-    </div>
+            <p class="date" id="wedding-date-text">March 9, 2028</p>
 
-    <div>
-        <span id="seconds">0</span>
-        <small>Seconds</small>
-    </div>
-</div>    
+            <!-- Live Countdown -->
+            <div id="countdown" class="countdown mt-3">
+                <div class="countdown-unit">
+                    <span id="days">0</span>
+                    <small>Days</small>
+                </div>
+                <div class="countdown-unit">
+                    <span id="hours">0</span>
+                    <small>Hours</small>
+                </div>
+                <div class="countdown-unit">
+                    <span id="minutes">0</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="countdown-unit">
+                    <span id="seconds">0</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
 
-        <button id="openInvitation">
-            Open Invitation
-        </button>
-    </div>
+            <button class="open-btn" id="openInvitation">
+                <i class="fa-solid fa-envelope-open-text" style="margin-right:8px;"></i>Open Invitation
+            </button>
+        </div>
+
     </section>
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </body>
 </html>

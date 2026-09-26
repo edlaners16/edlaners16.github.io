@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You're Invited! | Michelle & Edlan</title>
+    <title>You're Invited! | Michelle &amp; Edlan</title>
 
     <link rel="stylesheet" href="css/invitation.css">
 
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    
+
     <!-- Icons (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -19,20 +19,48 @@
 </head>
 <body class="fade-in">
 
-    <!-- Header Section -->
+    <!-- ==================== FLOATING MUSIC PLAYER ==================== -->
+    <div id="music-player" class="music-player" title="Toggle background music">
+        <button id="music-toggle" class="music-btn" aria-label="Play background music">
+            <i class="fa-solid fa-music"></i>
+        </button>
+        <span class="music-label">Music</span>
+    </div>
+
+    <!-- ==================== HEADER SECTION ==================== -->
     <header class="main-header">
-        <div class="container">
-            <p>You are joyfully invited to celebrate the wedding of</p>
-            <h1 class="couple-names">Michelle & Edlan</h1>
+        <canvas id="header-petals"></canvas>
+        <div class="container header-content">
+            <p class="header-sub">You are joyfully invited to celebrate the wedding of</p>
+            <h1 class="couple-names">Michelle &amp; Edlan</h1>
+            <div class="header-divider">
+                <span></span><i class="fa-solid fa-heart"></i><span></span>
+            </div>
             <div class="date-place">
-                <span>March 9, 2028</span>
-                <span>Pasig City, Philippines</span>
+                <span><i class="fa-regular fa-calendar"></i>&nbsp; March 9, 2028</span>
+                <span><i class="fa-solid fa-location-dot"></i>&nbsp; Pasig City, Philippines</span>
             </div>
         </div>
     </header>
 
-    <!-- Our Story Section -->
-    <section class="story-section scroll-reveal">
+    <!-- ==================== COUNTDOWN (inside invitation) ==================== -->
+    <section class="inv-countdown-section scroll-reveal" id="story-anchor">
+        <div class="container">
+            <p class="inv-countdown-label">Counting down to our big day</p>
+            <div class="inv-countdown">
+                <div class="inv-cd-unit"><span id="i-days">0</span><small>Days</small></div>
+                <div class="inv-cd-sep">:</div>
+                <div class="inv-cd-unit"><span id="i-hours">0</span><small>Hours</small></div>
+                <div class="inv-cd-sep">:</div>
+                <div class="inv-cd-unit"><span id="i-minutes">0</span><small>Minutes</small></div>
+                <div class="inv-cd-sep">:</div>
+                <div class="inv-cd-unit"><span id="i-seconds">0</span><small>Seconds</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== OUR STORY SECTION ==================== -->
+    <section class="story-section scroll-reveal" id="story">
         <div class="container">
             <h2 class="section-title">Our Story</h2>
             <div class="story-content">
@@ -48,7 +76,48 @@
         </div>
     </section>
 
-    <!-- Event Details Section -->
+    <!-- ==================== TIMELINE SECTION ==================== -->
+    <section class="timeline-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"><i class="fa-solid fa-headphones"></i></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2016</span>
+                        <h4>First Meeting</h4>
+                        <p>A shared love for K-pop brought two strangers together. We met in person for the first time and felt like we'd known each other for years.</p>
+                    </div>
+                </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2017</span>
+                        <h4>Something More</h4>
+                        <p>What started as friendship slowly blossomed into something deeper. We started dating, and our adventure truly began.</p>
+                    </div>
+                </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"><i class="fa-solid fa-heart"></i></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2024</span>
+                        <h4>The Proposal</h4>
+                        <p>After years of growing together, Edlan got down on one knee and asked Michelle to be his forever. Of course, she said yes!</p>
+                    </div>
+                </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"><i class="fa-solid fa-ring"></i></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2028</span>
+                        <h4>Forever Begins</h4>
+                        <p>We're finally saying "I do" and can't wait to celebrate this new chapter with all of you by our side.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EVENT DETAILS SECTION ==================== -->
     <section class="event-section scroll-reveal">
         <div class="container">
             <h2 class="section-title">The Wedding</h2>
@@ -60,6 +129,12 @@
                         <p>1:00 PM</p>
                         <p><strong>San Antonio Abad Parish</strong></p>
                         <p>Brgy. Maybunga, Pasig City</p>
+                        <a class="add-to-cal-btn"
+                           href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0ABEGIN%3AVEVENT%0ADTSTART%3A20280309T050000Z%0ADTEND%3A20280309T070000Z%0ASUMMARY%3AMichelle%20%26%20Edlan%20Wedding%20Ceremony%0ALOCATION%3ASan%20Antonio%20Abad%20Parish%2C%20Brgy.%20Maybunga%2C%20Pasig%20City%0ADESCRIPTION%3AWedding%20ceremony%20of%20Michelle%20%26%20Edlan%0AEND%3AVEVENT%0AEND%3AVCALENDAR"
+                           download="wedding-ceremony.ics"
+                           aria-label="Add ceremony to calendar">
+                            <i class="fa-solid fa-calendar-plus"></i> Add to Calendar
+                        </a>
                     </div>
                     <div class="map-container">
                         <iframe
@@ -81,6 +156,12 @@
                         <p>3:00 PM</p>
                         <p><strong>The Vibe Arcovia</strong></p>
                         <p>Arcovia City, Brgy. Ugong, Pasig City</p>
+                        <a class="add-to-cal-btn"
+                           href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0ABEGIN%3AVEVENT%0ADTSTART%3A20280309T070000Z%0ADTEND%3A20280309T140000Z%0ASUMMARY%3AMichelle%20%26%20Edlan%20Wedding%20Reception%0ALOCATION%3AThe%20Vibe%20Arcovia%2C%20Arcovia%20City%2C%20Pasig%20City%0ADESCRIPTION%3AWedding%20reception%20of%20Michelle%20%26%20Edlan%0AEND%3AVEVENT%0AEND%3AVCALENDAR"
+                           download="wedding-reception.ics"
+                           aria-label="Add reception to calendar">
+                            <i class="fa-solid fa-calendar-plus"></i> Add to Calendar
+                        </a>
                     </div>
                     <div class="map-container">
                         <iframe
@@ -98,7 +179,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- ==================== GALLERY SECTION ==================== -->
     <section class="gallery-section scroll-reveal">
         <div class="container">
             <h2 class="section-title">Our Moments</h2>
@@ -119,49 +200,72 @@
         </div>
     </section>
 
-    <!-- Attire & Gifts Section -->
+    <!-- ==================== ATTIRE & GIFTS SECTION ==================== -->
     <section class="info-section scroll-reveal">
         <div class="container">
             <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-shirt"></i></div>
                 <h3>Dress Code</h3>
+                <div class="color-swatches">
+                    <span class="swatch" style="background:#fff;border:1px solid #ddd;" title="White"></span>
+                    <span class="swatch" style="background:#f5e7c1;" title="Champagne"></span>
+                    <span class="swatch" style="background:#c8a96a;" title="Gold"></span>
+                    <span class="swatch" style="background:#d4b483;" title="Sandy Gold"></span>
+                </div>
                 <p>Formal Attire. We kindly request guests to come in white and shades of gold tones to complement our wedding's motif.</p>
             </div>
             <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-gift"></i></div>
                 <h3>Gift Wish</h3>
                 <p>Your presence at our wedding is the greatest gift of all. However, should you wish to honor us with a gift, a monetary contribution to our future home would be warmly appreciated.</p>
             </div>
         </div>
     </section>
 
-    <!-- RSVP Section -->
+    <!-- ==================== RSVP SECTION ==================== -->
     <section class="rsvp-section scroll-reveal">
         <div class="container">
             <div class="rsvp-box">
                 <h2 class="section-title">Will You Be There?</h2>
                 <p>Please let us know if you can celebrate with us by</p>
-                <p>March 9, 2028.</p>
-                <a href="https://forms.gle/your-form-link-here" target="_blank" rel="noopener noreferrer" class="rsvp-button">RSVP Now</a>
+                <p><strong>February 9, 2028.</strong></p>
+                <a href="https://forms.gle/your-form-link-here" target="_blank" rel="noopener noreferrer" class="rsvp-button">
+                    <i class="fa-solid fa-paper-plane"></i>&nbsp; RSVP Now
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ==================== FOOTER ==================== -->
     <footer class="main-footer">
         <div class="container">
-            <h3 class="couple-names">M & E</h3>
+            <h3 class="couple-names">M &amp; E</h3>
+            <div class="footer-divider">
+                <span></span><i class="fa-solid fa-heart"></i><span></span>
+            </div>
             <p>#JanElle2028</p>
+            <p class="footer-back"><a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to home</a></p>
         </div>
     </footer>
 
-    <!-- Lightbox modal for viewing images full-size -->
+    <!-- ==================== LIGHTBOX ==================== -->
     <div id="lightbox" class="lightbox" aria-hidden="true">
         <div class="lightbox-overlay"></div>
         <div class="lightbox-content" role="dialog" aria-modal="true">
             <button class="lightbox-close" aria-label="Close">×</button>
+            <button class="lightbox-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
             <div class="lightbox-spinner" aria-hidden="true"></div>
             <img class="lightbox-image" src="" alt="" />
+            <button class="lightbox-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
+
+    <!-- Background music (muted autoplay; user unlocks via button) -->
+    <audio id="bg-music" loop preload="none">
+        <!-- Add your own audio file here, e.g.: -->
+        <!-- <source src="audio/wedding-song.mp3" type="audio/mpeg"> -->
+    </audio>
+
     <script src="js/invitation.js"></script>
 </body>
 </html>
